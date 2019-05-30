@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+*.log.*
+.tern-project
+.vscode
+coverage
+.nyc_output
+test.js

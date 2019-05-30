@@ -1,0 +1,41 @@
+{
+    "env": {
+      "node": true,
+      "mocha": true
+    },
+    "plugins": [],
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "script",
+      "ecmaFeatures": {
+      }
+    },
+    "rules": {
+      "camelcase": ["error"],
+      "space-before-blocks": ["error"],
+      "no-cond-assign": ["error"],
+      "no-trailing-spaces": ["error"],
+      "no-console": ["error"],
+      "no-var": ["error"],
+      "no-return-assign": ["error"],
+      "no-param-reassign": ["error"],
+      "comma-spacing": ["error"],
+      "semi": ["error", "always"],
+      "curly": ["error"],
+      "eqeqeq": ["error"],
+      "brace-style": ["error"],
+      "indent": ["error", 2, {"SwitchCase": 1}],
+      "max-len": ["error", 180, 2, {"ignoreComments": true}],
+      "no-unused-vars": ["error"],
+      "prefer-arrow-callback": ["error"],
+      "quotes": ["error", "single"],
+      "keyword-spacing": ["error"],
+      "key-spacing": ["error"],
+      "semi-spacing": ["error"],
+      "object-curly-spacing": ["error", "never"],
+      "space-infix-ops": ["error"],
+      "no-multi-spaces": ["error"]
+    },
+    "globals": {
+  }
+}
