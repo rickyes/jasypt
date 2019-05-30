@@ -46,6 +46,37 @@ class Jasypt {
     return this._encryptor.decrypt(encryptedMessage, this.password, this.iterations);
   }
 
+  /**
+   * 解密对象里含有ENC(xxxx)格式的value
+   * @param {Object} obj 入参配置对象
+   */
+  decryptConfig (obj) {
+    if (!util.isType('Object', obj)) {
+      return;
+    }
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        const value = obj[key];
+        if (util.isType('Object', value)) {
+          this.decryptConfig(value);
+        } else if (util.isType('String', value)) {
+          if (value.indexOf('ENC(') === 0 && value.indexOf(')') === value.length - 1) {
+            const encryptMsg = value.substring(4, value.length - 1);
+            obj[key] = this.decrypt(encryptMsg);
+          }
+        } else if (util.isType('Array', value)) {
+          for (const item of value) {
+            if (util.isType('Object', item)) {
+              this.decryptConfig(item);
+            }
+          }
+        } else {
+          continue;
+        }
+      }
+    }
+  }
+
 
 }
 

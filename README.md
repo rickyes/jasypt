@@ -41,3 +41,67 @@ $ jasypt -p G0CvDz7oJn60 -d 5mLtVOnrEFqnrFuvpJbnpg==
 
 admin
 ```
+
+#### 解密加密项 for Spring Boot
+``` js
+// 对配置项的ENC(xxx)进行解密
+const data = {
+  code: 42,
+  test: {
+    db: 'ENC(c0KA89TBZ6TbLn7E6RIiFQ==)',
+    pwd: {
+      a: 'ENC(c0KA89TBZ6TbLn7E6RIiFQ==)'
+    },
+    asad: {
+      pwd: {
+        str: 'str',
+        host: 'ENC(c0KA89TBZ6TbLn7E6RIiFQ==)',
+        pwd: 'ENC(c0KA89TBZ6TbLn7E6RIiFQ==)'
+      }
+    },
+    items: [{
+      user: 'user1',
+      pwd: 'ENC(c0KA89TBZ6TbLn7E6RIiFQ==)'
+    }, {
+      user: 'user2',
+      pwd: 'ENC(c0KA89TBZ6TbLn7E6RIiFQ==)'
+    }, {
+      user: 'user3',
+      pwd: 'ENC(c0KA89TBZ6TbLn7E6RIiFQ==)'
+    }],
+  }
+};
+
+const jasypt = new Jasypt();
+jasypt.setPassword('P8dEw34TgvbY');
+jasypt.decryptConfig(data);
+```
+``` js
+// 解密出来的内容
+const data = {
+  code: 42,
+  test: {
+    db: 'admin',
+    pwd: {
+      a: 'admin'
+    },
+    asad: {
+      pwd: {
+        str: 'str',
+        host: 'admin',
+        pwd: 'admin'
+      }
+    },
+    items: [{
+      user: 'user1',
+      pwd: 'admin'
+    }, {
+      user: 'user2',
+      pwd: 'admin'
+    }, {
+      user: 'user3',
+      pwd: 'admin'
+    }],
+  }
+};
+```

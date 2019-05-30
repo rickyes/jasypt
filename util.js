@@ -1,7 +1,7 @@
 'use strict';
 
 const toString = Object.prototype.toString;
-const isType = (type, content) => toString.call(content) === `[object ${type}]`
+const isType = (type, content) => toString.call(content) === `[object ${type}]`;
 
 /**
  * 判断对象是否为初始值
@@ -18,3 +18,5 @@ exports.isEmpty = function () {
   }
   return false;
 };
+
+exports.isType = isType;
