@@ -60,7 +60,7 @@ class Jasypt {
         if (util.isType('Object', value)) {
           this.decryptConfig(value);
         } else if (util.isType('String', value)) {
-          if (value.indexOf('ENC(') === 0 && value.indexOf(')') === value.length - 1) {
+          if (value.indexOf('ENC(') === 0 && value.lastIndexOf(')') === value.length - 1) {
             const encryptMsg = value.substring(4, value.length - 1);
             obj[key] = this.decrypt(encryptMsg);
           }
