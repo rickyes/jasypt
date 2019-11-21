@@ -22,6 +22,7 @@ const decrypt = (encryptMsg) => {
 };
 
 program
+  .help()
   .version(pkg.version, '-v, --version')
   .option('-p, --password <pwd>', '秘钥', setPassword)
   .option('-e, --encrypt <msg>', '需要加密的文本', encrypt)
