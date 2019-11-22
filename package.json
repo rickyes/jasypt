@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "test": "ava --verbose",
-    "cov": "nyc ava --verbose && nyc report --reporter=html"
+    "cov": "nyc ava --verbose && nyc report --reporter=html",
+    "ci": "npm run test && npm run cov"
   },
   "repository": {
     "type": "git",
