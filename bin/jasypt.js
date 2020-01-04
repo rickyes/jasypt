@@ -29,4 +29,6 @@ program
 
 program.parse(process.argv);
 
-program.help()
+if (process.argv.length === 2) {
+  program.help();
+}

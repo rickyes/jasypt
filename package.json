@@ -1,6 +1,6 @@
 {
   "name": "jasypt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "org.jasypt.util.text.BasicTextEncryptor for Node.js",
   "main": "index.js",
   "bin": {
