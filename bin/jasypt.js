@@ -22,10 +22,11 @@ const decrypt = (encryptMsg) => {
 };
 
 program
-  .help()
   .version(pkg.version, '-v, --version')
   .option('-p, --password <pwd>', '秘钥', setPassword)
   .option('-e, --encrypt <msg>', '需要加密的文本', encrypt)
   .option('-d, --decrypt <encryptMsg>', '需要解密的文本', decrypt);
 
 program.parse(process.argv);
+
+program.help()
