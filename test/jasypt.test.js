@@ -1,8 +1,8 @@
 'use strict';
 
-const test = require('ava');
+const {test} = require('tap');
 
-const Jasypt = require('.');
+const Jasypt = require('..');
 const password = 'G0CvDz7oJn60';
 const message = 'admin';
 const decryptMessage = 'c0KA89TBZ6TbLn7E6RIiFQ==';
@@ -38,9 +38,9 @@ test('encrypt', t => {
   const jasypt = new Jasypt();
   jasypt.setPassword(password);
   const encryptMsg = jasypt.encrypt('');
-  t.is(encryptMsg, null);
+  t.equal(encryptMsg, null);
   jasypt.encrypt('a');
-  t.pass();
+  t.end();
 });
 
 test('decrypt', t => {
@@ -48,10 +48,10 @@ test('decrypt', t => {
   jasypt.setPassword(password);
   let decryptMsg = '';
   decryptMsg = jasypt.decrypt(null);
-  t.is(decryptMsg, null);
+  t.equal(decryptMsg, null);
   decryptMsg = jasypt.decrypt(decryptMessage);
-  t.is(decryptMsg, message);
-  t.pass();
+  t.equal(decryptMsg, message);
+  t.end();
 });
 
 test('encrypt & decrypt', t => {
@@ -59,8 +59,8 @@ test('encrypt & decrypt', t => {
   jasypt.setPassword(password);
   const encryptMsg = jasypt.encrypt(message);
   const decryptMsg = jasypt.decrypt(encryptMsg);
-  t.is(decryptMsg, message);
-  t.pass();
+  t.equal(decryptMsg, message);
+  t.end();
 });
 
 test('decryptConfig', t => {
@@ -68,15 +68,15 @@ test('decryptConfig', t => {
   jasypt.setPassword(password);
   jasypt.decryptConfig('');
   jasypt.decryptConfig(data);
-  t.is(data.test.db, message);
-  t.is(data.test.pwd.a, message);
-  t.is(data.test.asad.pwd.str, 'str');
-  t.is(data.test.asad.pwd.pwd, message);
-  t.is(data.test.asad.pwd.host, message);
+  t.equal(data.test.db, message);
+  t.equal(data.test.pwd.a, message);
+  t.equal(data.test.asad.pwd.str, 'str');
+  t.equal(data.test.asad.pwd.pwd, message);
+  t.equal(data.test.asad.pwd.host, message);
   for (const item of data.test.items) {
-    t.is(item.pwd, message);
+    t.equal(item.pwd, message);
   }
-  t.pass();
+  t.end();
 });
 
 

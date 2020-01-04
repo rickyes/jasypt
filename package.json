@@ -14,9 +14,8 @@
     "util.js"
   ],
   "scripts": {
-    "test": "ava --verbose",
-    "cov": "nyc ava --verbose && nyc report --reporter=html",
-    "ci": "npm run test && npm run cov"
+    "test": "tap -j4 test/*",
+    "cov": "tap -j4 test/* --cov"
   },
   "repository": {
     "type": "git",
@@ -37,10 +36,11 @@
   "homepage": "https://github.com/rickyes/jasypt#readme",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^1.4.1",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "tap": "^14.10.5"
   },
   "dependencies": {
+    "codecov": "^3.6.1",
     "commander": "^2.20.0"
   }
 }
