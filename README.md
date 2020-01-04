@@ -6,7 +6,7 @@
 [![npm download][download-image]][download-url]
 
 [npm-image]: https://img.shields.io/npm/v/jasypt.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/sequelize-base
+[npm-url]: https://www.npmjs.com/package/jasypt
 [travis-image]: https://img.shields.io/travis/rickyes/jasypt.svg?style=flat-square
 [travis-url]: https://travis-ci.org/rickyes/jasypt
 [codecov-image]: https://codecov.io/gh/rickyes/jasypt/branch/master/graph/badge.svg
