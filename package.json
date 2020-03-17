@@ -36,6 +36,8 @@
   "homepage": "https://github.com/rickyes/jasypt#readme",
   "license": "MIT",
   "devDependencies": {
+    "beautify-benchmark": "^0.2.4",
+    "benchmark": "^2.1.4",
     "nyc": "^14.1.1",
     "tap": "^14.10.5"
   },
