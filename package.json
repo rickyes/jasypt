@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "test": "tap -j4 test/*",
-    "cov": "tap -j4 test/* --cov"
+    "cov": "tap -j4 test/* --cov",
+    "benchmark": "node ./benchmark/jasypt.js"
   },
   "repository": {
     "type": "git",
@@ -38,11 +39,11 @@
   "devDependencies": {
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
+    "codecov": "^3.6.5",
     "nyc": "^14.1.1",
     "tap": "^14.10.5"
   },
   "dependencies": {
-    "codecov": "^3.6.1",
     "commander": "^2.20.0"
   }
 }

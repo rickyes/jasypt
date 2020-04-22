@@ -25,7 +25,7 @@ class Encryptor {
    * @param {String} iterations 偏移量
    */
   KDF (password, salt, iterations) {
-    const pwd = new Buffer(password, 'utf-8');
+    const pwd = Buffer.from(password, 'utf-8');
     let key = Buffer.concat([pwd, salt]);
     for (let i = 0; i < iterations; i++) {
       key = crypto.createHash('md5').update(key).digest();
@@ -41,8 +41,8 @@ class Encryptor {
    */
   getKeyIV(password, salt, iterations) {
     const key = this.KDF(password, salt, iterations);
-    const keybuf = new Buffer(key, 'binary').slice(0, 8);
-    const ivbuf = new Buffer(key, 'binary').slice(8, 16);
+    const keybuf = Buffer.from(key, 'binary').slice(0, 8);
+    const ivbuf = Buffer.from(key, 'binary').slice(8, 16);
     return [ keybuf, ivbuf ];
   }
 
@@ -61,8 +61,8 @@ class Encryptor {
     encrypted.push(cipher.update(payload, 'utf-8', 'hex'));
     encrypted.push(cipher.final('hex'));
 
-    const out = new Buffer(encrypted.join(''), 'hex');
-    const result = new Buffer(out.length + salt.length);
+    const out = Buffer.from(encrypted.join(''), 'hex');
+    const result =  Buffer.alloc(out.length + salt.length);
 
     salt.copy(result, 0, 0, salt.length);
     out.copy(result, salt.length, 0, out.length);
@@ -77,19 +77,17 @@ class Encryptor {
    * @param {String} iterations 偏移量
    */
   decrypt(payload, password, iterations) {
-    const encryptedMessage = new Buffer(payload, 'base64');
+    const encryptedMessage = Buffer.from(payload, 'base64');
     const decrypted = [];
     const saltStart = 0;
     const saltSizeBytes = 8;
-    let salt = null;
-    let encryptedMessageKernel = null;
 
     const saltSize = saltSizeBytes < encryptedMessage.length ? saltSizeBytes : encryptedMessage.length;
     const encMesKernelStart = saltSizeBytes < encryptedMessage.length ? saltSizeBytes : encryptedMessage.length;
     const encMesKernelSize = saltSizeBytes < encryptedMessage.length ? (encryptedMessage.length - saltSizeBytes) : 0;
 
-    salt = new Buffer(saltSize);
-    encryptedMessageKernel = new Buffer(encMesKernelSize);
+    const salt = Buffer.alloc(saltSize);
+    const encryptedMessageKernel = Buffer.alloc(encMesKernelSize);
 
     encryptedMessage.copy(salt, 0, saltStart, saltSize);
     encryptedMessage.copy(encryptedMessageKernel, 0, encMesKernelStart, encryptedMessage.length);
