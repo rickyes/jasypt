@@ -1,5 +1,8 @@
 # Jasypt
 
+### Version 1.0.2 / `2020-04-22`
+1. Use Buffer.from() and Buffer.alloc() to replace the new Buffer() that was deprecated.
+
 ### Version 0.1.3 / `2019-05-31`
 1. 扫描 ENC() 改为反向扫描右括号
 
