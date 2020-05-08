@@ -1,14 +1,11 @@
 # Jasypt
 
+### Version 1.0.3 / `2020-05-08`
+- [[83d3f3b75d]](https://github.com/rickyes/jasypt/commit/83d3f3b75d) - Optimize command line printing details.
+
 ### Version 1.0.2 / `2020-04-22`
-1. Use Buffer.from() and Buffer.alloc() to replace the new Buffer() that was deprecated.
+- [[3787b75c9c]](https://github.com/rickyes/jasypt/commit/3787b75c9c) - Use Buffer.from() and Buffer.alloc() to replace the new Buffer() that was deprecated.
+- [[cd902dde01]](https://github.com/rickyes/jasypt/commit/cd902dde01) - add benchmark test
 
-### Version 0.1.3 / `2019-05-31`
-1. 扫描 ENC() 改为反向扫描右括号
-
-### Version 0.1.2 / `2019-05-30`
-1. 新增 decryptConfig 接口，对标 spring boot 中对配置项的ENC(xxx)进行解密
-
-### Version 0.1.1 / `2019-05-30`
-1. 发布第一个版本，支持 setPassword、encrypt、decrypt
-2. 支持SDK、命令行方式
+### Version 1.0.1 / `2019-01-04`
+- [[e49b1f0ce5]](https://github.com/rickyes/jasypt/commit/e49b1f0ce5) - Repair default command output
