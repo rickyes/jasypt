@@ -23,9 +23,16 @@ const decrypt = (encryptMsg) => {
 
 program
   .version(pkg.version, '-v, --version')
-  .option('-p, --password <pwd>', '秘钥', setPassword)
-  .option('-e, --encrypt <msg>', '需要加密的文本', encrypt)
-  .option('-d, --decrypt <encryptMsg>', '需要解密的文本', decrypt);
+  .option('-p, --password <pwd>', 'The secret key', setPassword)
+  .option('-e, --encrypt <msg>', 'Text to be encrypting', encrypt)
+  .option('-d, --decrypt <encryptMsg>', 'Text to be decrypting', decrypt)
+  .on('--help', function() {
+    console.log('');
+    console.log('Examples:');
+    console.log('');
+    console.log('  $ jasypt -p 0x1995 -e admin');
+    console.log('  $ jasypt -p 0x1995 -d nsbC5r0ymz740/aURtuRWw==');
+  });
 
 program.parse(process.argv);
 

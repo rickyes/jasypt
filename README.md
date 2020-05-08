@@ -42,18 +42,15 @@ Usage: jasypt [options]
 
 Options:
   -v, --version               output the version number
-  -p, --password <pwd>        秘钥
-  -e, --encrypt <msg>         需要加密的文本
-  -d, --decrypt <encryptMsg>  需要解密的文本
+  -p, --password <pwd>        The secret key
+  -e, --encrypt <msg>         Text to be encrypting
+  -d, --decrypt <encryptMsg>  Text to be decrypting
   -h, --help                  output usage information
 
-$ jasypt -p G0CvDz7oJn60 -e admin
+Examples:
 
-5mLtVOnrEFqnrFuvpJbnpg==
-
-$ jasypt -p G0CvDz7oJn60 -d 5mLtVOnrEFqnrFuvpJbnpg==
-
-admin
+  $ jasypt -p 0x1995 -e admin
+  $ jasypt -p 0x1995 -d nsbC5r0ymz740/aURtuRWw==
 ```
 
 #### 解密加密项 for Spring Boot
