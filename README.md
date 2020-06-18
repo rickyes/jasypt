@@ -1,9 +1,12 @@
 ## Jasypt
 
 [![NPM version][npm-image]][npm-url]
+[![Codacy][codacy-image]][codacy-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
-[![npm download][download-image]][download-url]
+[![npm downloads/month][downloads-month-image]][download-url]
+[![npm downloads][downloads-image]][download-url]
+
 
 [npm-image]: https://img.shields.io/npm/v/jasypt.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/jasypt
@@ -11,8 +14,11 @@
 [travis-url]: https://travis-ci.org/rickyes/jasypt
 [codecov-image]: https://codecov.io/gh/rickyes/jasypt/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/github/rickyes/jasypt?branch=master
-[download-image]: https://img.shields.io/npm/dm/jasypt.svg?style=flat-square
+[downloads-month-image]: https://img.shields.io/npm/dm/jasypt.svg?style=flat-square
 [download-url]: https://npmjs.org/package/jasypt
+[downloads-image]: https://img.shields.io/npm/dt/jasypt.svg
+[codacy-image]: https://app.codacy.com/project/badge/Grade/7a96dea4ed924752b2f131c0ab5ec812
+[codacy-url]: https://app.codacy.com/manual/rickyes/jasypt
 
 org.jasypt.util.text.BasicTextEncryptor for Node.js
 
