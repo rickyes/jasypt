@@ -4,6 +4,7 @@ node_modules
 *.log.*
 .tern-project
 package-lock.json
+yarn.lock
 .vscode
 coverage
 .nyc_output
