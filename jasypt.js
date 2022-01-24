@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const assert = require('assert');
 const Encryptor = require('./encryptor');
 const util = require('./util');
+const cacher = require('./cache');
 
 class Jasypt {
 
@@ -13,6 +14,10 @@ class Jasypt {
     this.salt = opts.salt || crypto.randomBytes(8);
     this.iterations = opts.iterations || 1000;
     this.password = '';
+  }
+
+  getCacheKey(key) {
+    return `${this.salt}_${this.iterations}_${this.password}_${key}`;
   }
 
   /**
@@ -43,7 +48,14 @@ class Jasypt {
     if (util.isEmpty(encryptedMessage)) {
       return null;
     }
-    return this._encryptor.decrypt(encryptedMessage, this.password, this.iterations);
+
+    const cacheKey = this.getCacheKey(encryptedMessage);
+    if (cacher.has(cacheKey)) return cacher.get(cacheKey);
+  
+    const value = this._encryptor.decrypt(encryptedMessage, this.password, this.iterations);
+    cacher.set(cacheKey, value);
+  
+    return value;
   }
 
   /**

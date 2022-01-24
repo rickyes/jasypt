@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "test": "tap -j4 test/*",
-    "cov": "tap -j4 test/* --cov",
+    "ci": "tap -j4 test/* --cov",
+    "cov": "tap -j4 test/* --cov --coverage-report=html",
     "benchmark": "node ./benchmark/jasypt.js"
   },
   "repository": {
@@ -44,6 +45,7 @@
     "tap": "^14.10.5"
   },
   "dependencies": {
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "lru-cache": "^6.0.0"
   }
 }
