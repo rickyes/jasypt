@@ -26,6 +26,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm ci
-    - run: tap --coverage-report=text-lcov > coverage.lcov && codecov
+    - name: Run Install
+      run: |
+        npm install
+        npm install -g tap
+    - name: Run cov
+      run: |
+        npm ci
+        tap --coverage-report=text-lcov > coverage.lcov && codecov
