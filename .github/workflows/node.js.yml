@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  universal:
     name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
@@ -29,7 +29,7 @@ jobs:
     - name: Run Install
       run: |
         npm install
-        npm install -g tap
+        npm install -g tap codecov
     - name: Run cov
       run: |
         npm ci
