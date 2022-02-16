@@ -2,7 +2,7 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy][codacy-image]][codacy-url]
-[![build status][travis-image]][travis-url]
+[![build status][build-image]][build-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![npm downloads/month][downloads-month-image]][download-url]
 [![npm downloads][downloads-image]][download-url]
@@ -10,8 +10,8 @@
 
 [npm-image]: https://img.shields.io/npm/v/jasypt.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/jasypt
-[travis-image]: https://img.shields.io/travis/rickyes/jasypt.svg?style=flat-square
-[travis-url]: https://travis-ci.org/rickyes/jasypt
+[build-image]: https://github.com/rickyes/jasypt/actions/workflows/node.js.yml/badge.svg?branch=master
+[build-url]: https://github.com/rickyes/jasypt
 [codecov-image]: https://codecov.io/gh/rickyes/jasypt/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/github/rickyes/jasypt?branch=master
 [downloads-month-image]: https://img.shields.io/npm/dm/jasypt.svg?style=flat-square
