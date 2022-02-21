@@ -11,7 +11,8 @@
     "encryptor.js",
     "index.js",
     "jasypt.js",
-    "util.js"
+    "util.js",
+    "cache.js"
   ],
   "scripts": {
     "test": "tap -j4 test/*",
